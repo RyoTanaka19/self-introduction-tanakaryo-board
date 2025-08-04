@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 type PostFormProps = {
   onSubmit: (
-    title: string,
+    username: string,
     body: string,
     career: string,
     portfolio: string
   ) => void;
-  initialTitle?: string;
+  initialUsername?: string;
   initialBody?: string;
   initialCareer?: string;
   initialPortfolio?: string;
@@ -16,13 +16,13 @@ type PostFormProps = {
 
 const PostForm: React.FC<PostFormProps> = ({
   onSubmit,
-  initialTitle = '',
+  initialUsername = '',
   initialBody = '',
   initialCareer = '',
   initialPortfolio = '',
   submitLabel = '投稿する',
 }) => {
-  const [title, setTitle] = useState(initialTitle);
+  const [username, setUsername] = useState(initialUsername);
   const [body, setBody] = useState(initialBody);
   const [career, setCareer] = useState(initialCareer);
   const [portfolio, setPortfolio] = useState(initialPortfolio);
@@ -30,18 +30,18 @@ const PostForm: React.FC<PostFormProps> = ({
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
-    setTitle(initialTitle);
+    setUsername(initialUsername);
     setBody(initialBody);
     setCareer(initialCareer);
     setPortfolio(initialPortfolio);
     setErrors({});
-  }, [initialTitle, initialBody, initialCareer, initialPortfolio]);
+  }, [initialUsername, initialBody, initialCareer, initialPortfolio]);
 
   const validate = () => {
     const newErrors: { [key: string]: string } = {};
 
-    if (!title.trim()) {
-      newErrors.title = 'タイトルは必須です。';
+    if (!username.trim()) {
+      newErrors.username = 'ユーザー名は必須です。';
     }
     if (!body.trim()) {
       newErrors.body = '本文は必須です。';
@@ -56,9 +56,9 @@ const PostForm: React.FC<PostFormProps> = ({
 
     if (!validate()) return;
 
-    onSubmit(title, body, career, portfolio);
+    onSubmit(username, body, career, portfolio);
 
-    setTitle('');
+    setUsername('');
     setBody('');
     setCareer('');
     setPortfolio('');
@@ -72,24 +72,24 @@ const PostForm: React.FC<PostFormProps> = ({
     >
       <div className="mb-6">
         <label className="block mb-2 font-semibold text-gray-700">
-          タイトル
+          ユーザー名
         </label>
         <input
           type="text"
           className={`w-full px-4 py-3 rounded-md border focus:outline-none focus:ring-2 transition-colors
             ${
-              errors.title
+              errors.username
                 ? 'border-red-500 focus:ring-red-400'
                 : 'border-gray-300 focus:ring-blue-400'
             }`}
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="タイトルを入力してください"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="ユーザー名を入力してください"
           required
         />
-        {errors.title && (
+        {errors.username && (
           <p className="mt-2 text-sm text-red-600 font-medium">
-            {errors.title}
+            {errors.username}
           </p>
         )}
       </div>
