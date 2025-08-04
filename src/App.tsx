@@ -3,7 +3,7 @@ import PostForm from './components/PostForm';
 
 type Post = {
   id: number;
-  title: string;
+  username: string; // ここをtitleからusernameに変更
   body: string;
   career: string;
   portfolio: string;
@@ -12,12 +12,11 @@ type Post = {
 function App() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [editingPostId, setEditingPostId] = useState<number | null>(null);
-  const [editingTitle, setEditingTitle] = useState('');
+  const [editingUsername, setEditingUsername] = useState('');
   const [editingBody, setEditingBody] = useState('');
   const [editingCareer, setEditingCareer] = useState('');
   const [editingPortfolio, setEditingPortfolio] = useState('');
 
-  // ** 追加 **: ローカルストレージから初期値を読み込む
   useEffect(() => {
     const savedPosts = localStorage.getItem('posts');
     if (savedPosts) {
@@ -25,20 +24,19 @@ function App() {
     }
   }, []);
 
-  // ** 追加 **: postsが変わるたびにローカルストレージに保存
   useEffect(() => {
     localStorage.setItem('posts', JSON.stringify(posts));
   }, [posts]);
 
   const handleAddPost = (
-    title: string,
+    username: string,
     body: string,
     career: string,
     portfolio: string
   ) => {
     const newPost: Post = {
       id: Date.now(),
-      title,
+      username,
       body,
       career,
       portfolio,
@@ -48,14 +46,14 @@ function App() {
 
   const handleStartEdit = (post: Post) => {
     setEditingPostId(post.id);
-    setEditingTitle(post.title);
+    setEditingUsername(post.username);
     setEditingBody(post.body);
     setEditingCareer(post.career);
     setEditingPortfolio(post.portfolio);
   };
 
   const handleConfirmEdit = (
-    title: string,
+    username: string,
     body: string,
     career: string,
     portfolio: string
@@ -65,13 +63,13 @@ function App() {
     setPosts(
       posts.map((post) =>
         post.id === editingPostId
-          ? { ...post, title, body, career, portfolio }
+          ? { ...post, username, body, career, portfolio }
           : post
       )
     );
 
     setEditingPostId(null);
-    setEditingTitle('');
+    setEditingUsername('');
     setEditingBody('');
     setEditingCareer('');
     setEditingPortfolio('');
@@ -79,7 +77,7 @@ function App() {
 
   const handleCancelEdit = () => {
     setEditingPostId(null);
-    setEditingTitle('');
+    setEditingUsername('');
     setEditingBody('');
     setEditingCareer('');
     setEditingPortfolio('');
@@ -108,7 +106,7 @@ function App() {
           </h2>
           <PostForm
             onSubmit={handleConfirmEdit}
-            initialTitle={editingTitle}
+            initialUsername={editingUsername}
             initialBody={editingBody}
             initialCareer={editingCareer}
             initialPortfolio={editingPortfolio}
@@ -129,21 +127,19 @@ function App() {
         ) : (
           posts.map((post) => (
             <div key={post.id} className="bg-white p-4 rounded shadow">
-              <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+              <h2 className="text-xl font-semibold mb-2">{post.username}</h2>{' '}
+              {/* title → username */}
               <p>{post.body}</p>
-
               <div className="mt-2">
                 <strong>経歴:</strong>
                 <p className="whitespace-pre-line">{post.career || '未登録'}</p>
               </div>
-
               <div className="mt-2">
                 <strong>ポートフォリオ:</strong>
                 <p className="whitespace-pre-line">
                   {post.portfolio || '未登録'}
                 </p>
               </div>
-
               <div className="flex gap-4 mt-4">
                 <button
                   onClick={() => handleStartEdit(post)}
