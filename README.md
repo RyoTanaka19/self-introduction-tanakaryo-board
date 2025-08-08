@@ -1,13 +1,12 @@
-サービス URL: [自己紹介掲示板](https://self-introduction-tanakaryo-board.vercel.app/)
+サービス URL: [私の自己紹介](https://self-introduction-tanakaryo-board.vercel.app/)
+
 
 
 ## ▪️ アプリ概要
 
-[自己紹介掲示板]は、ReactとTypeScriptの学習目的のために作成された学習用アプリです。
-自己紹介の投稿、編集、削除、更新ができます。
-React導入からデプロイまで、４時間程度でできました。
+[私の自己紹介]は、ReactとTypeScriptの学習を目的として作成した、採用担当者やその他の方に私を知っていただくための自己紹介サービスです。
 
-[![Image from Gyazo](https://i.gyazo.com/bc1826c46801eefab4c7bd1e38bf4d38.png)](https://gyazo.com/bc1826c46801eefab4c7bd1e38bf4d38)
+<img width="1918" height="994" alt="tanaka_ryo_2025-08-08" src="https://github.com/user-attachments/assets/ef989d8f-e5cb-4863-b3fc-991dddc9ebbc" />
 
 ## ■ 使用技術
 
@@ -18,5 +17,7 @@ React導入からデプロイまで、４時間程度でできました。
 
 
 
-## ■ 今後
-　TypescriptとReactの書籍などを使いながらこの学習用アプリの実装を通じて、学び、UI・UX整えたり、機能を増やしていきたいです。
+## ■ 今後やってみたいこと
+　TypeScriptとReactを学習の通じて、
+バックエンドで投稿の作成・編集・削除・更新などの機能を試したり、
+コメント機能や「いいね」機能にも挑戦したいと思っています。
