@@ -8,7 +8,7 @@ function App() {
     <div className="p-4 sm:p-6 bg-orange-100 max-w-screen-lg mx-auto">
       {/* 一番上のタイトル */}
       <h1 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
-        <span className="text-blue-600">田中諒</span>の自己紹介
+        <span className="text-blue-600">私</span>の自己紹介
       </h1>
 
       {/* 横並びコンテナ（折り返し対応） */}
@@ -28,22 +28,27 @@ function App() {
             <p>
               <strong>年齢:</strong> 27歳
             </p>
+
+            <p>
+              <strong>出身地:</strong> 広島県
+            </p>
             <p>
               <strong>趣味:</strong>{' '}
               ランニング、カラオケ、プログラミング、魚釣り
             </p>
             <p>
-              <strong>好きな食べ物:</strong> 寿司、しゃぶ、野菜など
+              <strong>好きな食べ物:</strong> 寿司、しゃぶ、野菜
             </p>
             <p>
               <strong>好きな曲:</strong>{' '}
-              3月9日、シングルベッド、猫、シュガーソングとビターステップなど
+              3月9日、シングルベッド、猫、シュガーソングとビターステップ
             </p>
             <p className="mt-4 font-semibold">これからやりたいこと</p>
             <ul className="list-disc list-inside">
               <li>ReactやTypescriptなどの学習</li>
               <li>ダンス</li>
-              <li>ボイトレなど</li>
+              <li>ボイトレ</li>
+              <li>英会話</li>
             </ul>
           </div>
         </div>
@@ -60,9 +65,10 @@ function App() {
               2021年頃 -
               初めてHTML/CSSを独学で学び、書籍を用いて「Webサイト」作成
             </li>
+            <li>2022年3月 - 広島修道大学 法学部・法律学科卒業</li>
             <li>2022年4月 - IT業界のSES企業にシステムエンジニアとして入社</li>
             <li>2024年3月 - 退職</li>
-            <li>2024年6月 - RUNTEQスクールに入学</li>
+            <li>2024年6月 - RUNTEQスクール入学</li>
             <li>2025年3月 - RUNTEQスクール卒業</li>
             <li>
               2025年5月 -
@@ -97,11 +103,11 @@ function App() {
           <ul className="list-disc list-inside space-y-2 text-sm sm:text-base">
             <li>HTML・CSS (独学・スクール)</li>
             <li>Bootstrap (独学・スクール)</li>
-            <li>TailwindCSS (卒業制作)</li>
+            <li>Tailwind CSS (卒業制作)</li>
             <li>JavaScript (独学・スクール)</li>
             <li>TypeScript (現在学習中)</li>
             <li>Ruby (スクール)</li>
-            <li>PHP (就職する前に少し独学)</li>
+            <li>PHP (就職前に独学)</li>
             <li>Java (実務)</li>
             <li>VB.NET (実務)</li>
             <li>MySQL (独学・スクール)</li>
