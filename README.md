@@ -4,7 +4,7 @@
 
 ## ▪️ アプリ概要
 
-[私の自己紹介]は、ReactとTypeScriptの学習を目的として作成した、採用担当者やその他の方に私を知っていただくための自己紹介サービスです。
+[私の自己紹介]は、ReactとTypeScriptの学習を目的として作成された、採用担当者やその他の方に私のことを知っていただくための自己紹介サービスです。
 
 <img width="1918" height="994" alt="tanaka_ryo_2025-08-08" src="https://github.com/user-attachments/assets/ef989d8f-e5cb-4863-b3fc-991dddc9ebbc" />
 
